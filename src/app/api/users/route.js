@@ -11,7 +11,7 @@ client.connect();
 
 export async function GET() {
   try {
-    const result = await client.query('SELECT * FROM tbl_users');
+    const result = await client.query('SELECT * FROM tbl_users ORDER BY id ASC');
     return new Response(JSON.stringify(result.rows), {
       status: 200,
       headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
